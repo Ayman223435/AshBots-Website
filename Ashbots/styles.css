@@ -604,3 +604,8 @@ section { padding: 64px 0; }
   color: var(--blue-300);
   font-size: 14px;
 }
+.brand-logo {
+    height: 48px;
+    width: auto;
+    display: block;
+}
