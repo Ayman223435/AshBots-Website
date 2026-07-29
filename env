@@ -1,0 +1,13 @@
+# AshBots — config reference
+# Note: this is a plain static site (no build tool/server), so nothing here
+# is actually loaded automatically. It's just a single place to track the
+# values that are hardcoded in script.js, so you don't have to hunt through
+# the file when something changes.
+
+VOICEFLOW_PROJECT_ID=6a0df9981bc0f5f52d625534
+VOICEFLOW_VERSION_ID=production
+VOICEFLOW_RUNTIME_URL=https://general-runtime.voiceflow.com
+VOICEFLOW_VOICE_URL=https://runtime-api.voiceflow.com
+
+CONTACT_EMAIL=ayman@ashbots.com
+SITE_DOMAIN=ashbots.com
