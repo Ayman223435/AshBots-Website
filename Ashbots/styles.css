@@ -167,16 +167,6 @@ header.site {
   font-weight: 700;
   box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset;
 }
-.brand img.brand-icon {
-  width: 30px;
-  height: auto;
-  display: block;
-}
-.footer-brand img.brand-icon {
-  width: 32px;
-  height: auto;
-  display: block;
-}
 .nav-links {
   display: flex;
   align-items: center;
@@ -325,25 +315,17 @@ footer.site {
   border-bottom: 1px solid var(--line);
 }
 .chat-avatar {
-  width: 34px; height: 34px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--blue-400), #1b3a8a);
-  display: grid; place-items: center;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: #060a14;
-  font-weight: 700;
-  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .chat-avatar img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-.brand-logo {
-  width: 34px;
-  height: auto;
-  display: block;
+  object-fit: contain;
 }
 .chat-head .who { font-size: 14.5px; font-weight: 600; }
 .chat-head .status {
@@ -623,73 +605,10 @@ section { padding: 64px 0; }
 .direct-box .email {
   font-family: var(--font-mono);
   color: var(--blue-300);
-  font-size: 15px;
+  font-size: 14px;
 }
-
-/* ---------- Client spotlight (current: single client) ---------- */
-.spotlight-card {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  background: var(--navy-800);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px 32px;
-}
-.spotlight-mark {
-  flex-shrink: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--blue-400), #1b3a8a);
-  display: grid;
-  place-items: center;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 17px;
-  color: #060a14;
-}
-.spotlight-body h3 { font-size: 18px; margin-bottom: 6px; }
-.spotlight-body p { color: var(--ink-300); font-size: 14.5px; margin: 0; max-width: 60ch; }
-
-@media (max-width: 600px) {
-  .spotlight-card { flex-direction: column; text-align: center; }
-}
-
-/* ---------- Logo marquee (activate once there are 4+ client logos) ----------
-   Swap the .spotlight-card block in index.html for the markup below, then
-   add more .marquee-track img entries as you sign clients:
-
-   <div class="marquee">
-     <div class="marquee-track">
-       <img src="assets/clients/client-1.png" alt="Client name">
-       <img src="assets/clients/client-2.png" alt="Client name">
-       ... duplicate the same set once more in the same track so the loop
-       is seamless (the animation scrolls exactly 50%, then resets) ...
-     </div>
-   </div>
-------------------------------------------------------------------- */
-.marquee {
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-.marquee-track {
-  display: flex;
-  align-items: center;
-  gap: 64px;
-  width: max-content;
-  animation: marquee-scroll 28s linear infinite;
-}
-.marquee-track img {
-  height: 32px;
-  width: auto;
-  opacity: 0.6;
-  filter: grayscale(1) brightness(1.6);
-  transition: opacity 0.2s ease;
-}
-.marquee-track img:hover { opacity: 1; }
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+.brand-logo {
+    height: 48px;
+    width: auto;
+    display: block;
 }
