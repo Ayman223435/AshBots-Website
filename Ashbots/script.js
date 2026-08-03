@@ -4,20 +4,16 @@
 function runChatDemo() {
   const body = document.getElementById('chatBody');
   if (!body) return;
-
   const script = [
     { type: 'bot', text: "Hi! I noticed you were looking at our pricing. Would you like a custom quote?" },
     { type: 'user', text: "Yes, please. I have a small team." },
     { type: 'bot', text: "Perfect. Let me collect a few details to get that started for you..." },
     { type: 'system', text: "New lead captured successfully" },
   ];
-
   let i = 0;
-
   function clearBody() {
     body.innerHTML = '';
   }
-
   function showTyping(callback, delay) {
     const t = document.createElement('div');
     t.className = 'typing';
@@ -28,7 +24,6 @@ function runChatDemo() {
       callback();
     }, delay);
   }
-
   function addBubble(step) {
     const el = document.createElement('div');
     if (step.type === 'system') {
@@ -39,7 +34,6 @@ function runChatDemo() {
     el.textContent = step.text;
     body.appendChild(el);
   }
-
   function step() {
     if (i >= script.length) {
       setTimeout(() => { clearBody(); i = 0; step(); }, 2600);
@@ -58,10 +52,8 @@ function runChatDemo() {
       setTimeout(step, 900);
     }
   }
-
   step();
 }
-
 // AshBots — live chatbot
 // Loads your Voiceflow assistant as the floating widget bubble.
 // This runs on every page (index, pricing, about, contact) since they all
@@ -71,7 +63,7 @@ function loadVoiceflowBot() {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
       v.onload = function() {
         window.voiceflow.chat.load({
-          verify: { projectID: '6a0df9981bc0f5f52d625534' },
+          verify: { projectID: '6a710b1fa0271204c89f35d4' },
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production',
           voice: {
@@ -82,6 +74,5 @@ function loadVoiceflowBot() {
       v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
   })(document, 'script');
 }
-
 document.addEventListener('DOMContentLoaded', runChatDemo);
 document.addEventListener('DOMContentLoaded', loadVoiceflowBot);
